@@ -13,6 +13,16 @@ import static spark.Spark.*;
 public class App {
 
     public static void main(String[] args) {
+        ProcessBuilder process = new ProcessBuilder();
+        Integer port;
+
+        if (process.environment().get("PORT") != null) {
+            port = Integer.parseInt(process.environment().get("PORT"));
+        } else {
+            port = 4567;
+        }
+
+        port(port);
         Sql2oDepartments departmentDao;
         Sql2oUsers usersDao;
         Sql2oNews newsDao;
@@ -26,6 +36,11 @@ public class App {
         departmentDao = new Sql2oDepartments(sql2o);
         usersDao = new Sql2oUsers(sql2o);
         newsDao = new Sql2oNews(sql2o);
+
+        get(("/"), (request, response) -> {
+            response.redirect("/users");
+            return null;
+        });
 
         post ("departments/new", "application/json", (request, response) -> {
             Departments department = gson.fromJson(request.body(), Departments.class);

@@ -1,6 +1,5 @@
-plugins {
-    id 'java'
-}
+apply plugin: 'java'
+apply plugin: 'application'
 
 group 'Ato Organazation'
 version '1.0-SNAPSHOT'
@@ -21,3 +20,7 @@ dependencies {
     compile "com.sparkjava:spark-template-handlebars:2.5.5"
     compile 'com.google.code.gson:gson:2.5'
 }
+
+applicationName = "ato-org"
+mainClassName = 'App'
+task stage(dependsOn: ['clean', 'installDist'])

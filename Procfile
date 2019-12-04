@@ -1,0 +1,1 @@
+web: ./build/install/ato-org/bin/ato-org
