@@ -19,7 +19,7 @@ public class Sql2oDepartments implements DepartmentDao {
 
     @Override
     public void add(Departments departments) {
-        String sql = "INSERT INTO departments(name, description, numberOfEmployees) VALUES (:name, :description, :numberOfEmployees);";
+        String sql = "INSERT INTO departments(userName, description, numberOfEmployees) VALUES (:userName, :description, :numberOfEmployees);";
         try(Connection con = sql2o.open()){
             int id = (int) con.createQuery(sql, true)
                     .bind(departments)
@@ -33,21 +33,21 @@ public class Sql2oDepartments implements DepartmentDao {
 
     @Override
     public List<Departments> getAll() {
+        String sql = "SELECT * FROM departments;";
         try(Connection con = sql2o.open()){
-            String sql = "SELECT * FROM departments;";
             return con.createQuery(sql)
                     .executeAndFetch(Departments.class);
         }
     }
 
     @Override
-    public void update(int id, String name, String description, int numberOfEmployees) {
+    public void update(int id, String userName, String description, int numberOfEmployees) {
     }
 
     @Override
     public void delete(int id) {
+        String sql = "DELETE FROM departments WHERE id = :id;";
         try(Connection con = sql2o.open()){
-            String sql = "DELETE FROM departments WHERE id = :id;";
             con.createQuery(sql)
                     .addParameter("id", id)
                     .executeUpdate();
@@ -59,8 +59,8 @@ public class Sql2oDepartments implements DepartmentDao {
 
     @Override
     public void clearAll() {
+        String sql = "DELETE FROM departments;";
         try (Connection con = sql2o.open()){
-            String sql = "DELETE FROM departments;";
             con.createQuery(sql).executeUpdate();
         }catch (Sql2oException ex){
             System.out.println(ex);

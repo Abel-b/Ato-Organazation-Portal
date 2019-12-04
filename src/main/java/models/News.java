@@ -3,18 +3,17 @@ package models;
 import java.util.Objects;
 
 public class News {
-
+    private int id;
     private String title;
     private String newsContent;
-    private int id;
     private String writtenBy;
-    private int departmentId;
+    private int department;
 
-    public News(String title, String newsContent, String writtenBy, int departmentId) {
+    public News(String title, String newsContent, String writtenBy, int department) {
         this.title = title;
         this.newsContent = newsContent;
         this.writtenBy = writtenBy;
-        this.departmentId = departmentId;
+        this.department = department;
     }
 
     public String getTitle() {
@@ -50,11 +49,11 @@ public class News {
     }
 
     public int getDepartmentId() {
-        return departmentId;
+        return department;
     }
 
-    public void setDepartmentId(int departmentId) {
-        this.departmentId = departmentId;
+    public void setDepartmentId(int department) {
+        this.department = department;
     }
 
     @Override

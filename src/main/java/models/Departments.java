@@ -4,23 +4,23 @@ import java.util.Objects;
 
 public class Departments {
 
-    private String name;
+    private String userName;
     private String description;
     private int numberOfEmployees;
     private int id;
 
-    public Departments(String name, String description, int numberOfEmployees) {
-        this.name = name;
+    public Departments(String userName, String description, int numberOfEmployees) {
+        this.userName = userName;
         this.description = description;
         this.numberOfEmployees = numberOfEmployees;
     }
 
     public String getName() {
-        return name;
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String userName) {
+        this.userName = userName;
     }
 
     public String getDescription() {

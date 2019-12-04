@@ -1,0 +1,1 @@
+DROP DATABASE ato_org;
