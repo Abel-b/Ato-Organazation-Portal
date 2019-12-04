@@ -21,6 +21,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.5'
 }
 
+
 applicationName = "ato-org"
 mainClassName = 'App'
 task stage(dependsOn: ['clean', 'installDist'])

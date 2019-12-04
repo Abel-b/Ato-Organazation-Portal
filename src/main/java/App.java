@@ -30,8 +30,7 @@ public class App {
         Gson gson = new Gson();
 
 
-        String connectionString = "jdbc:postgresql://localhost:5432/ato_org";
-        Sql2o sql2o = new Sql2o(connectionString, "moringa", "berhane1234");
+        Sql2o sql2o = DB.sql2o;
 
         departmentDao = new Sql2oDepartments(sql2o);
         usersDao = new Sql2oUsers(sql2o);
