@@ -1,6 +1,9 @@
+
+[![CircleCI](https://circleci.com/gh/Abel-b/Ato-Organazation-Portal.svg?style=svg)](https://circleci.com/gh/Abel-b/Ato-Organazation-Portal)
 ## Author 
 Abel B.
-## Ato-Organisational-API
+
+## Ato-Organisational-API 
 This is a spark-java api that enables one fetch the data from a database in form of a json object.
 
 ## Installation
