@@ -27,3 +27,5 @@ CREATE TABLE IF NOT EXISTS users(
     userName VARCHAR,
     userRole VARCHAR,
     departmentId int);
+
+CREATE DATABASE ato_org_test WITH TEMPLATE ato_org;
